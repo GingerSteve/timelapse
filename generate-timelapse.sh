@@ -1,23 +1,27 @@
 #!/bin/bash
 
+# Generates a timelapse at 2k resolution (ish)
+
 # ----- VARIABLES -----
 
-# Generates a timelapse at 2k resolution (ish)
+# Output options
 FRAMERATE=24 # Number of frames per second
 WIDTH=2048
 HEIGHT=1536
 
-ENABLE_BLEND=true                               # Adds transition at the end of the timelapse, to compare two images
-BLEND_IMG_START=./timelapse/20220729_090001.jpg # "Before" image
-BLEND_IMG_END=./timelapse/20220729_171901.jpg   # "After" image
-
+ENABLE_BLEND=true                                  # Adds transition at the end of the timelapse, to compare two images
 BLEND_LENGTH=2                                     # Length in seconds of the blend transition
 BLEND_PAUSE=1                                      # How long to sit on images between blends
 BLEND_TOTAL_LENGTH=$((BLEND_LENGTH + BLEND_PAUSE)) # Length in seconds of the blend clips – will stay on the last frame until time's up
 
+# Input options
 INPUT_GLOB=./timelapse/*.jpg               # Input image name pattern
 TIMELAPSE_NAME=./timelapse/timelapse.mp4   # Output timelapse name
 FINAL_NAME=./timelapse/timelapse_final.mp4 # Final output name, with blends
+
+# Blend options - only needed if ENABLE_BLEND is true
+BLEND_IMG_START=./timelapse/20220729_090001.jpg # "Before" image
+BLEND_IMG_END=./timelapse/20220729_171901.jpg   # "After" image
 
 # Temporary blend output files – these are cleaned up at the end
 BLEND0=blend0.mp4
