@@ -15,10 +15,10 @@ BLEND_PAUSE=1                                      # How long to sit on images b
 BLEND_TOTAL_LENGTH=$((BLEND_LENGTH + BLEND_PAUSE)) # Length in seconds of the blend clips – will stay on the last frame until time's up
 
 # Input options
-DIRECTORY=./
-INPUT_GLOB=$DIRECTORY/*.jpg               # Input image name pattern
-TIMELAPSE_NAME=$DIRECTORY/_timelapse.mp4   # Output timelapse name
-FINAL_NAME=$DIRECTORY/_timelapse_final.mp4 # Final output name, with blends
+DIRECTORY=~/Pictures/timelapse
+INPUT_GLOB=$DIRECTORY/*.jpg                    # Input image name pattern
+TIMELAPSE_NAME=$DIRECTORY/_timelapse.mp4       # Output timelapse name
+FINAL_NAME=$DIRECTORY/_timelapse_final.mp4     # Final output name, with blends
 
 # Blend options - only needed if ENABLE_BLEND is true
 BLEND_IMG_START=$DIRECTORY/20220729_090001.jpg # "Before" image
